@@ -40,7 +40,11 @@ export class ProductsController {
       return 'Successful Updated';
     }
 
-   
+   @Delete(':id')
+   removeProduct(@Param('id') prodId: string,){
+        this.productService.deleteProduct(prodId)
+        return 'Successfully deleted'
+   }
 
 
 }
